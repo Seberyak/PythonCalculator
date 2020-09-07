@@ -6,7 +6,11 @@ b = int(input("b = "))
 
 c = int(input("c = "))
 
+print(a, " * x ^ 2 + ", b, " * x + ", c, " = 0")
+
 d = b ** 2 - 4 * a * c
+
+print("D = ", d)
 
 if d > 0:
     x1 = (-b + d ** -2) / (2 * a)
