@@ -21,7 +21,6 @@ if __name__ == '__main__':
         arguments = re.split(r'(\D)', sys.argv[1])
 
         for i in range(len(arguments)):
-            print(arguments[i])
             if i == 0:
                 GLOBAL_VARIABLE = float(arguments[i])
 
