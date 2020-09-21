@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
             elif i % 2 == 0:
                 GLOBAL_VARIABLE = check(arguments[i-1:i+1])
-
+        GLOBAL_VARIABLE = int(GLOBAL_VARIABLE+0.5)
         print(GLOBAL_VARIABLE)
 
     except Exception as err:
