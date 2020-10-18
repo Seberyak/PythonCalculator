@@ -1,7 +1,17 @@
 import sys
-import re
 
 ERROR_MSG = "(Error: {})"
+
+
+def split(args):
+    res, var = [], ""
+    for i in args:
+        if i in "+-*/":
+            res += [int(var), i]
+            var = ""
+            continue
+        var += i
+    return res + [int(var)]
 
 
 def ordering_operations(args):
@@ -24,26 +34,25 @@ def ordering_operations(args):
 
     if len(args) > 1:
         return ordering_operations(args)
-
-    return args[0]
+    return int(args[0]+0.5)
 
 
 def calculate(var_1, operand, var_2):
     res = 0
     if operand == "+":
-        res = float(var_1) + float(var_2)
+        res = float(var_1 + var_2)
     if operand == "-":
-        res = float(var_1) - float(var_2)
+        res = float(var_1 - var_2)
     if operand == "*":
-        res = float(var_1) * float(var_2)
+        res = float(var_1 * var_2)
     if operand == "/":
-        res = float(var_1) / float(var_2)
-    return int(res + 0.5)
+        res = float(var_1 / var_2)
+    return res
 
 
 def main():
     try:
-        arguments = re.split(r'(\D)', sys.argv[1])
+        arguments = split(sys.argv[1])
         answer = ordering_operations(arguments)
         print(answer)
     except Exception as err:
