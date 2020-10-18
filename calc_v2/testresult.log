@@ -1,0 +1,21 @@
+OK C: X:OK; O:(Error: list index out of range)
+OK C:10+5 X:OK; O:15
+OK C:10-5 X:OK; O:5
+OK C:10*3 X:OK; O:30
+OK C:10/5 X:OK; O:2
+OK C:10/3 X:OK; O:3
+OK C:9/10 X:OK; O:1
+OK C:10/4 X:OK; O:3
+OK C:10/0 X:OK; O:(Error: division by zero)
+OK C:10.4+3.5 X:OK; O:(Error: invalid literal for int() with base 10: '10.4')
+OK C:abcd+efg X:OK; O:(Error: invalid literal for int() with base 10: 'abcd')
+OK C:a10+3b X:OK; O:(Error: invalid literal for int() with base 10: 'a10')
+OK C:10++3 X:OK; O:(Error: invalid literal for int() with base 10: '')
+OK C:-10+5 X:OK; O:(Error: invalid literal for int() with base 10: '')
+OK C:1+5+1 X:OK; O:7
+OK C:1+5+1-2 X:OK; O:5
+OK C:3+10/3+13/3 X:OK; O:11
+OK C:10/2*3 X:OK; O:2
+OK C:10/2*3+3 X:OK; O:5
+OK C:10/2*3+-3 X:OK; O:(Error: invalid literal for int() with base 10: '')
+OK C:10/(2*3+3) X:OK; O:(Error: invalid literal for int() with base 10: '(2')
