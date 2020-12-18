@@ -34,7 +34,7 @@ def ordering_operations(args):
 
     if len(args) > 1:
         return ordering_operations(args)
-    return int(args[0]+0.5)
+    return int(args[0] + 0.5)
 
 
 def calculate(var_1, operand, var_2):
@@ -50,7 +50,7 @@ def calculate(var_1, operand, var_2):
     return res
 
 
-def main():
+def main():  # pragma: no cover
     try:
         arguments = split(sys.argv[1])
         answer = ordering_operations(arguments)
@@ -59,5 +59,5 @@ def main():
         print(ERROR_MSG.format(err))
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     main()
